@@ -86,12 +86,12 @@ export default function Footer() {
             <Link href="/terms">Terms & Conditions</Link>
             <span className="sep">•</span>
             <Link href="/privacy">Privacy Policy</Link>
-            <span className="sep">•</span>
+            {/* <span className="sep">•</span>
             <a href="https://www.amazon.in/s?k=apeak" target="_blank" rel="noopener noreferrer">Amazon</a>
             <span className="sep">•</span>
             <a href="https://www.instagram.com/apeak.in/" target="_blank" rel="noopener noreferrer">Instagram</a>
             <span className="sep">•</span>
-            <Link href="/contact">Support</Link>
+            <Link href="/contact">Support</Link> */}
           </div>
         </div>
       </div>
