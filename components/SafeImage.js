@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function SafeImage({
   src,
@@ -13,6 +13,13 @@ export default function SafeImage({
 }) {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      setLoaded(true);
+    }
+  }, []);
 
   // Support both direct string paths/URLs and imported image objects from next/image static imports
   const resolvedSrc = typeof src === "object" && src !== null ? src.src || "" : src;
@@ -54,6 +61,7 @@ export default function SafeImage({
         </div>
       ) : (
         <img
+          ref={imgRef}
           src={resolvedSrc}
           alt={alt || "Product image"}
           loading={priority ? "eager" : "lazy"}
