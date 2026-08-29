@@ -63,8 +63,8 @@ export default function ProductPage({ params }) {
                   aspectRatio="1 / 1"
                 />
               )}
-              <div className="stage-badge" style={{ position: "absolute", top: "16px", left: "16px", background: "rgba(255,255,255,0.9)", backdropFilter: "blur(8px)", padding: "4px 10px", borderRadius: "var(--radius-full)", fontSize: "10px", fontWeight: "700", letterSpacing: "1px", textTransform: "uppercase", color: "var(--ink)" }}>{product.category}</div>
-              {product.featured && <div className="stage-featured-tag" style={{ position: "absolute", bottom: "16px", right: "16px", background: "var(--ink)", color: "#fff", padding: "4px 10px", borderRadius: "var(--radius-full)", fontSize: "10px", fontWeight: "700", letterSpacing: "1px", textTransform: "uppercase" }}>✦ Featured Choice</div>}
+              <div className="stage-badge" style={{ position: "absolute", top: "16px", left: "16px", background: "rgba(255,255,255,0.9)", backdropFilter: "blur(8px)", padding: "4px 10px", borderRadius: "var(--radius-full)", fontSize: "10px", fontWeight: "700", letterSpacing: "1px", textTransform: "uppercase", color: "#111" }}>{product.category}</div>
+              {product.featured && <div className="stage-featured-tag" style={{ position: "absolute", bottom: "16px", right: "16px", background: "#111", color: "#fff", padding: "4px 10px", borderRadius: "var(--radius-full)", fontSize: "10px", fontWeight: "700", letterSpacing: "1px", textTransform: "uppercase" }}>✦ Featured Choice</div>}
             </div>
 
             {/* Thumbnails Strip */}

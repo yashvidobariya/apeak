@@ -2473,6 +2473,11 @@ p { color: var(--ink-soft); line-height: 1.7; }
 }
 
 /* ─── Comprehensive Dark Mode Component Overrides ─────────── */
+[data-theme="dark"] .cat-badge-tag,
+[data-theme="dark"] .cat-badge-count {
+  color: #111111; /* Ensure dark text on the light badge background */
+}
+
 [data-theme="dark"] .unique-floating-header .header-capsule-inner {
   background: rgba(19, 19, 23, 0.88);
   border-color: rgba(44, 44, 52, 0.95);
