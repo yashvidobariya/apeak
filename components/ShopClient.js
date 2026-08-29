@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { products, getProductsByCategory, categories } from "../data/products";
 import ProductCard from "./ProductCard";
-import ProductModal from "./ProductModal";
 import Sidebar from "./Sidebar";
 import { motion } from "framer-motion";
 
@@ -15,7 +14,6 @@ export default function ShopClient() {
 
   const [query, setQuery] = useState("");
   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
-  const [modalProduct, setModalProduct] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   function handleCategoryChange(cat) {
@@ -159,7 +157,6 @@ export default function ShopClient() {
                   <ProductCard
                     key={product.id}
                     product={product}
-                    onClick={setModalProduct}
                   />
                 ))}
               </div>
@@ -168,13 +165,6 @@ export default function ShopClient() {
         </div>
       </div>
 
-      {/* Product Quick Modal */}
-      {modalProduct && (
-        <ProductModal
-          product={modalProduct}
-          onClose={() => setModalProduct(null)}
-        />
-      )}
     </div>
   );
 }

@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getFeaturedProducts, products } from "../data/products";
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
-import ProductModal from "../components/ProductModal";
 import SafeImage from "../components/SafeImage";
 
 // Import local images from public directory
@@ -17,7 +16,6 @@ import motiMugImage from "@/public/images/products/moti-pearl-textured-ceramic-m
 
 export default function HomePage() {
   const featured = getFeaturedProducts();
-  const [modalProduct, setModalProduct] = useState(null);
   const [activeFaq, setActiveFaq] = useState(null);
 
   // High-end Editorial Collections Data with rich photography & badges
@@ -210,7 +208,6 @@ export default function HomePage() {
               <ProductCard
                 key={product.id}
                 product={product}
-                onClick={setModalProduct}
               />
             ))}
           </div>
@@ -329,14 +326,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Modal Quick View */}
-      {modalProduct && (
-        <ProductModal
-          product={modalProduct}
-          onClose={() => setModalProduct(null)}
-        />
-      )}
     </div>
   );
 }

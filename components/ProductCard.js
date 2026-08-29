@@ -2,9 +2,10 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 import SafeImage from "./SafeImage";
 
-export default function ProductCard({ product, onClick }) {
+export default function ProductCard({ product }) {
   const mainImage = product?.images?.[0];
 
   const x = useMotionValue(0);
@@ -36,7 +37,6 @@ export default function ProductCard({ product, onClick }) {
   return (
     <motion.article
       className="product-card"
-      onClick={() => onClick(product)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -47,27 +47,29 @@ export default function ProductCard({ product, onClick }) {
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.25 }}
     >
-      <div className="product-card-image">
-        <SafeImage
-          src={mainImage?.src}
-          alt={mainImage?.alt || product.title}
-          aspectRatio="1 / 1"
-        />
-        <div className="product-card-badge">{product.category}</div>
-      </div>
-      <div className="product-card-body">
-        <h3 className="product-card-title">{product.title}</h3>
-        <p className="product-card-desc">{product.description}</p>
-      </div>
-      <div className="product-card-footer">
-        <button
-          className="btn btn-card-action"
-          aria-label={`View details for ${product.title}`}
-        >
-          View Details
-          <Icon icon="lucide:arrow-right" width={14} height={14} />
-        </button>
-      </div>
+      <Link href={"/product/" + product.id} style={{ display: "flex", flexDirection: "column", flexGrow: 1, textDecoration: "none", color: "inherit" }}>
+        <div className="product-card-image">
+          <SafeImage
+            src={mainImage?.src}
+            alt={mainImage?.alt || product.title}
+            aspectRatio="1 / 1"
+          />
+          <div className="product-card-badge">{product.category}</div>
+        </div>
+        <div className="product-card-body">
+          <h3 className="product-card-title">{product.title}</h3>
+          <p className="product-card-desc">{product.description}</p>
+        </div>
+        <div className="product-card-footer">
+          <div
+            className="btn btn-card-action"
+            aria-label={`View details for ${product.title}`}
+          >
+            View Details
+            <Icon icon="lucide:arrow-right" width={14} height={14} />
+          </div>
+        </div>
+      </Link>
     </motion.article>
   );
 }
