@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -33,6 +34,12 @@ export default function RootLayout({ children }) {
               })();
             `,
           }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6389935784747183"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       </head>
       <body>

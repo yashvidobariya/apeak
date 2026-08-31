@@ -210,6 +210,23 @@ export default function Header() {
                   </AnimatePresence>
                 </li>
 
+                {/* About Us */}
+                <li>
+                  <Link
+                    href="/about"
+                    className={`nav-capsule-link ${pathname === "/about" ? "active" : ""}`}
+                  >
+                    <span>About Us</span>
+                    {pathname === "/about" && (
+                      <motion.div
+                        layoutId="activePillNav"
+                        className="nav-active-bubble"
+                        transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                      />
+                    )}
+                  </Link>
+                </li>
+
                 {/* Contact Us */}
                 <li>
                   <Link
@@ -497,6 +514,14 @@ export default function Header() {
                   >
                     <span>Shop</span>
                     <span className="drawer-badge-count">{products.length} Items</span>
+                  </Link>
+                  <Link
+                    href="/about"
+                    className={`drawer-link-item ${pathname === "/about" ? "active" : ""}`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <span>About Us</span>
+                    <Icon icon="lucide:chevron-right" width={14} height={14} />
                   </Link>
                   <Link
                     href="/contact"
