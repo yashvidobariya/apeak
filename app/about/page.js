@@ -4,6 +4,10 @@ export const metadata = {
   title: "About Us — Apeak",
   description:
     "Apeak is an e-commerce platform that sells daily use and fashion products.",
+  keywords: [
+    "Apeak", "Apeak store", "buy aesthetic products online india", "press-on nails india",
+    "aesthetic glass water bottle", "home organization products", "viral products india"
+  ],
 };
 
 export default function AboutPage() {

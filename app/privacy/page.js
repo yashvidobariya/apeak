@@ -4,7 +4,9 @@ export const metadata = {
   title: "Privacy Policy — Apeak",
   description:
     "Learn how Apeak protects your privacy, handles personal data, and keeps your online shopping experience safe and secure.",
-};
+  keywords: ["Apeak privacy policy", "Apeak data security", "Apeak safe shopping",
+  "buy press on nails online india", "reusable press on nails with glue", "short aesthetic stick on nails", "handmade false nails kit", "soft gel nail extensions press on", "french tip press on nails almond", "bridal press on nails online", "cute kids press on nails", "safe baby nail trimmer electric", "infant nail clipper with light", "vintage handheld vanity mirror", "antique brass pocket mirror", "led compact travel mirror", "cute folding mirror with comb", "aesthetic borosilicate glass water bottle", "reusable glass bottle with bamboo lid", "leakproof glass sipper bottle with straw", "kawaii cartoon water bottle for girls", "cute school water sipper for kids", "modular airtight kitchen storage containers", "rotating spice rack organizer 360", "2 tier kitchen countertop shelf organizer", "drawer divider cutlery organizer tray", "decorative dry fruit box with compartments", "rotating flower candy serving tray", "crystal glass dessert bowl set", "gold rim decorative glass bowls", "clear acrylic makeup organizer drawer", "aesthetic pastel desk setup accessories", "korean stationery desk organizer", "coquette room decor aesthetic items", "unique birthday gifts for best friend girl", "budget aesthetic gifts under 500", "viral aesthetic room finds india", "trending lifestyle products online shopping india",
+]};
 
 export default function PrivacyPage() {
   return (

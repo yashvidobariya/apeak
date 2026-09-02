@@ -4,6 +4,7 @@ export const metadata = {
   title: "Terms & Conditions — Apeak",
   description:
     "Read the Terms and Conditions for using the Apeak website, browsing products, and completing transactions.",
+  keywords: ["Apeak terms and conditions", "Apeak terms of service", "Apeak legal"],
 };
 
 export default function TermsPage() {
