@@ -2913,3 +2913,67 @@ p { color: var(--ink-soft); line-height: 1.7; }
     scroll-behavior: auto !important;
   }
 }
+
+/* ─── Editorial Article Content Styles (AdSense High-Value Pages) ─── */
+.article-body-content h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.35;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 8px;
+}
+
+.article-body-content h3 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.article-body-content p {
+  margin-bottom: 20px;
+}
+
+.article-body-content ul, .article-body-content ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.article-body-content li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  font-size: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.article-table th {
+  background: var(--surface-alt);
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+}
+
+.article-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--ink-soft);
+}
+
+.article-table tr:last-child td {
+  border-bottom: none;
+}

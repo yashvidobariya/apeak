@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { getFeaturedProducts, products } from "../data/products";
+import { articles } from "../data/articles";
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
 import SafeImage from "../components/SafeImage";
@@ -309,7 +310,86 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. Conversion CTA Banner */}
+      {/* 8. Editorial Lifestyle Guides & Journal Showcase */}
+      <section className="section section-journal bg-surface-alt" style={{ padding: "80px 0" }}>
+        <div className="container">
+          <div className="section-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "40px", flexWrap: "wrap", gap: "20px" }}>
+            <div>
+              <span className="eyebrow-pill">The Apeak Journal</span>
+              <h2 style={{ fontSize: "clamp(26px, 3.5vw, 36px)", marginTop: "8px" }}>Expert Guides for Mindful Living</h2>
+              <p className="header-lead" style={{ maxWidth: "600px", margin: 0, marginTop: "8px" }}>
+                Dive into researched tutorials on press-on nail care, thermal drinkware safety, and space-saving kitchen hacks.
+              </p>
+            </div>
+            <Link href="/blog" className="btn btn-outline" style={{ fontSize: "14px" }}>
+              Explore All {articles.length} Guides →
+            </Link>
+          </div>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "28px"
+          }}>
+            {articles.slice(0, 3).map((art) => (
+              <div
+                key={art.id}
+                style={{
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius-lg)",
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  boxShadow: "var(--shadow-sm)"
+                }}
+              >
+                <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 10", background: "var(--surface-alt)" }}>
+                  <SafeImage src={art.featuredImage} alt={art.title} aspectRatio="16 / 10" />
+                  <span style={{
+                    position: "absolute",
+                    top: "12px",
+                    left: "12px",
+                    background: "rgba(255, 255, 255, 0.9)",
+                    backdropFilter: "blur(6px)",
+                    color: "var(--ink)",
+                    padding: "4px 10px",
+                    borderRadius: "var(--radius-full)",
+                    fontSize: "11px",
+                    fontWeight: "700",
+                    textTransform: "uppercase"
+                  }}>
+                    {art.category}
+                  </span>
+                </div>
+
+                <div style={{ padding: "24px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                  <div style={{ fontSize: "12px", color: "var(--muted)", marginBottom: "8px" }}>
+                    {art.readTime} • By {art.author.name}
+                  </div>
+                  <h3 style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "18px",
+                    lineHeight: "1.35",
+                    marginBottom: "12px",
+                    color: "var(--ink)"
+                  }}>
+                    <Link href={`/blog/${art.slug}`}>{art.title}</Link>
+                  </h3>
+                  <p style={{ fontSize: "13.5px", lineHeight: "1.6", color: "var(--ink-soft)", marginBottom: "16px", flexGrow: 1 }}>
+                    {art.excerpt.slice(0, 110)}...
+                  </p>
+                  <Link href={`/blog/${art.slug}`} style={{ fontSize: "13px", fontWeight: "700", color: "var(--ink)", display: "flex", alignItems: "center", gap: "4px" }}>
+                    Read Full Guide →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. Conversion CTA Banner */}
       <section className="cta-banner">
         <div className="container cta-inner">
           <h2>Elevate your daily space & style</h2>

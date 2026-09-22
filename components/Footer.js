@@ -49,23 +49,35 @@ export default function Footer() {
           </div>
 
           {/* Nav Links Col */}
-          <div className="footer-links-grid">
+          <div className="footer-links-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}>
             <div className="footer-col">
               <h4>Navigation</h4>
               <ul>
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/shop">Shop</Link></li>
+                <li><Link href="/shop">Shop Catalog</Link></li>
+                <li><Link href="/blog">Guides & Journal</Link></li>
                 <li><Link href="/contact">Contact Us</Link></li>
               </ul>
             </div>
 
             <div className="footer-col">
-              <h4>Official Stores</h4>
+              <h4>Lifestyle Guides</h4>
+              <ul>
+                <li><Link href="/blog/the-ultimate-press-on-nails-guide">Press-On Nails Guide</Link></li>
+                <li><Link href="/blog/press-on-nails-vs-acrylic-vs-gel">Press-On vs Acrylics</Link></li>
+                <li><Link href="/blog/borosilicate-glass-vs-regular-glass-drinkware">Borosilicate Glass Care</Link></li>
+                <li><Link href="/blog/small-kitchen-organization-and-countertop-hacks">Kitchen Organizing</Link></li>
+                <li><Link href="/blog">View All Guides →</Link></li>
+              </ul>
+            </div>
+
+            <div className="footer-col">
+              <h4>Customer Care & Stores</h4>
               <ul>
                 <li>
                   <a href="https://www.amazon.in/s?k=apeak" target="_blank" rel="noopener noreferrer">
-                    Amazon India Store ↗
+                    Amazon Store ↗
                   </a>
                 </li>
                 <li>
@@ -73,6 +85,7 @@ export default function Footer() {
                     Instagram (@apeak.in) ↗
                   </a>
                 </li>
+                <li><Link href="/shipping">Shipping Policy</Link></li>
                 <li><Link href="/terms">Terms & Conditions</Link></li>
                 <li><Link href="/privacy">Privacy Policy</Link></li>
               </ul>
